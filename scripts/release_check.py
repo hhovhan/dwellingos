@@ -14,8 +14,8 @@ required = [
     ROOT / "output" / "reference_case_report.json",
     ROOT / "output" / "audit_log.json", ROOT / "public" / "index.html",
     ROOT / "public" / "app.js", ROOT / "public" / "styles.css",
-    ROOT / "docs" / "submission.md", ROOT / "docs" / "demo-video-script.md",
-    ROOT / "docs" / "technical-video-script.md", ROOT / "docs" / "team-video-script.md",
+    ROOT / "docs" / "submission.md", ROOT / "docs" / "judge-guide.md",
+    ROOT / "docs" / "assets" / "newark-passport.png",
     ROOT / "docs" / "architecture.md", ROOT / "docs" / "release-checklist.md",
     ROOT / "docs" / "method-note.md", ROOT / "docs" / "scale-architecture.md",
     ROOT / "docs" / "legal-review-packet.md",
@@ -35,4 +35,4 @@ changes = json.loads((ROOT / "output" / "changes.json").read_text())
 assert len(lookups) == 500
 assert set(changes) == {"T1", "T2", "T3", "T4", "T5"}
 assert rules and all(rule.get("source_url", "").startswith("https://") for rule in rules)
-print(f"Release check passed: {len(rules)} rules, {len(lookups)} properties, 5 change scenarios, all submission documents present")
+print(f"Release check passed: {len(rules)} rules, {len(lookups)} properties, 5 change scenarios, public judge documentation present")
