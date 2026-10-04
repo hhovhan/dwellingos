@@ -1,0 +1,19 @@
+{
+  "name": "dwellingos",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "audit": "python3 scripts/audit_corpus.py",
+    "extract": "python3 scripts/extract_rules.py",
+    "build:data": "python3 scripts/build_outputs.py",
+    "build:static": "python3 scripts/build_static.py",
+    "quality": "python3 scripts/build_quality_report.py",
+    "release:check": "python3 scripts/release_check.py",
+    "test": "python3 -m unittest discover -s tests -v",
+    "pipeline": "npm run audit && npm run extract && npm run build:data && npm run quality && npm test && npm run test:holdout && npm run score:reference && npm run release:check",
+    "score:reference": "python3 scripts/score_reference_cases.py",
+    "score:holdout": "python3 scripts/score_holdout.py",
+    "test:holdout": "python3 scripts/score_holdout.py --strict",
+    "start": "node server.js"
+  }
+}

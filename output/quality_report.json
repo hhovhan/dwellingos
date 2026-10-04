@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-10-04T07:38:14.737651+00:00",
+  "properties": 500,
+  "rules": 57,
+  "categories": {
+    "algorithmic_rent_setting": 9,
+    "application_screening_fees": 3,
+    "just_cause_eviction": 15,
+    "rent_increase_limits": 12,
+    "screening_restrictions": 12,
+    "security_deposits": 6
+  },
+  "results": {
+    "applies": 1960,
+    "not_yet_effective": 140,
+    "pending": 220,
+    "unknown": 3099
+  },
+  "citation_completeness": 1.0,
+  "verbatim_evidence_completeness": 1.0,
+  "properties_with_at_least_one_result": 500,
+  "properties_with_zip_state_conflict": 27,
+  "unknown_rate": 0.5718767300239896,
+  "corpus": {
+    "captured": 54,
+    "links_only": 33,
+    "integrity_issues": 0
+  },
+  "source_gap_dispositions": {
+    "context_only_official_source_preferred": 22,
+    "terms_review_required_not_captured": 6,
+    "covered_by_verified_supplement": 2,
+    "official_source_capture_blocked": 1,
+    "recovered_from_official_city_source": 2
+  },
+  "change_tests": {
+    "T1": 250,
+    "T2": 90,
+    "T3": 140,
+    "T4": 110,
+    "T5": 0
+  },
+  "limitations": [
+    "Candidate rules require legal review before production use.",
+    "The organizer's 33 link-only entries include two separately verified city supplements and two recovered official city excerpts; others remain context, publisher-review, or blocked sources.",
+    "The 20-case reference set is source-anchored and non-attorney-reviewed, not a complete legal gold set.",
+    "27 supplied property records have ZIP prefixes inconsistent with their listed state; all city boundaries still need independent validation.",
+    "Unknown is returned when supplied facts cannot prove coverage."
+  ]
+}

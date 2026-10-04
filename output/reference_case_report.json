@@ -1,0 +1,174 @@
+{
+  "review_status": "source_anchored_nonattorney_review; not an expert legal gold set",
+  "cases": 20,
+  "passed": 20,
+  "expected_distribution": {
+    "not_yet_effective": 2,
+    "applies": 5,
+    "unknown": 7,
+    "excluded": 6
+  },
+  "results": [
+    {
+      "id": "CA-before",
+      "rule_id": "CA-ALG-01",
+      "expected": "not_yet_effective",
+      "actual": "not_yet_effective",
+      "passed": true,
+      "basis": "Official AB 325 timing, before 2026-01-01"
+    },
+    {
+      "id": "CA-after",
+      "rule_id": "CA-ALG-01",
+      "expected": "applies",
+      "actual": "applies",
+      "passed": true,
+      "basis": "Official AB 325 timing, after 2026-01-01"
+    },
+    {
+      "id": "NJ-before",
+      "rule_id": "NJ-ALG-01",
+      "expected": "not_yet_effective",
+      "actual": "not_yet_effective",
+      "passed": true,
+      "basis": "New Jersey FAIR Act effective 2027-07-01"
+    },
+    {
+      "id": "NJ-after",
+      "rule_id": "NJ-ALG-01",
+      "expected": "applies",
+      "actual": "applies",
+      "passed": true,
+      "basis": "New Jersey FAIR Act effective 2027-07-01"
+    },
+    {
+      "id": "Newark-missing",
+      "rule_id": "NEWARK-RENT-01",
+      "expected": "unknown",
+      "actual": "unknown",
+      "passed": true,
+      "basis": "Official city says only certain units are covered; coverage record absent"
+    },
+    {
+      "id": "Newark-covered",
+      "rule_id": "NEWARK-RENT-01",
+      "expected": "applies",
+      "actual": "applies",
+      "passed": true,
+      "basis": "Official Newark 19:2-3.1 ceiling, coverage separately established"
+    },
+    {
+      "id": "Newark-exempt",
+      "rule_id": "NEWARK-RENT-01",
+      "expected": "excluded",
+      "actual": "excluded",
+      "passed": true,
+      "basis": "Covered-unit condition is false"
+    },
+    {
+      "id": "Newark-outside",
+      "rule_id": "NEWARK-RENT-01",
+      "expected": "excluded",
+      "actual": "excluded",
+      "passed": true,
+      "basis": "Newark ordinance has city jurisdiction"
+    },
+    {
+      "id": "SanDiego-missing",
+      "rule_id": "SD-INCOME-01",
+      "expected": "unknown",
+      "actual": "unknown",
+      "passed": true,
+      "basis": "Section 98.0804 owner-occupied exception cannot be resolved"
+    },
+    {
+      "id": "SanDiego-covered",
+      "rule_id": "SD-INCOME-01",
+      "expected": "applies",
+      "actual": "applies",
+      "passed": true,
+      "basis": "Section 98.0803 rule with section 98.0804 exception ruled out"
+    },
+    {
+      "id": "SanDiego-exempt",
+      "rule_id": "SD-INCOME-01",
+      "expected": "excluded",
+      "actual": "excluded",
+      "passed": true,
+      "basis": "Section 98.0804 owner-occupied shared-facilities exception"
+    },
+    {
+      "id": "SanDiego-outside",
+      "rule_id": "SD-INCOME-01",
+      "expected": "excluded",
+      "actual": "excluded",
+      "passed": true,
+      "basis": "San Diego ordinance has city jurisdiction"
+    },
+    {
+      "id": "Boston-program-unknown",
+      "rule_id": "AUTO-D010-SCRE-012",
+      "expected": "unknown",
+      "actual": "unknown",
+      "passed": true,
+      "basis": "DND/BPDA participation is missing"
+    },
+    {
+      "id": "Boston-program-yes",
+      "rule_id": "AUTO-D010-SCRE-012",
+      "expected": "applies",
+      "actual": "applies",
+      "passed": true,
+      "basis": "DND/BPDA participation affirmatively established"
+    },
+    {
+      "id": "Boston-program-no",
+      "rule_id": "AUTO-D010-SCRE-012",
+      "expected": "excluded",
+      "actual": "excluded",
+      "passed": true,
+      "basis": "DND/BPDA participation affirmatively excluded"
+    },
+    {
+      "id": "Dorchester-alias",
+      "rule_id": "AUTO-D010-SCRE-012",
+      "expected": "unknown",
+      "actual": "unknown",
+      "passed": true,
+      "basis": "Dorchester mailing label routes to Boston, but DND/BPDA participation remains unknown"
+    },
+    {
+      "id": "SanYsidro-alias",
+      "rule_id": "SD-INCOME-01",
+      "expected": "unknown",
+      "actual": "unknown",
+      "passed": true,
+      "basis": "San Ysidro mailing label routes to San Diego, but shared-facilities exception remains unknown"
+    },
+    {
+      "id": "Massachusetts-failed-ballot",
+      "rule_id": "AUTO-D011-RENT-013",
+      "expected": "excluded",
+      "actual": "excluded",
+      "passed": true,
+      "basis": "Failed home-rule proposal does not produce a current-law decision"
+    },
+    {
+      "id": "LosAngeles-expired-rate",
+      "rule_id": "AUTO-D042-RENT-028",
+      "expected": "unknown",
+      "actual": "unknown",
+      "passed": true,
+      "basis": "Official LA rate excerpt explicitly ended 2026-06-30; a newer rate source is required"
+    },
+    {
+      "id": "SanFrancisco-future-rate",
+      "rule_id": "AUTO-D080-RENT-049",
+      "expected": "unknown",
+      "actual": "unknown",
+      "passed": true,
+      "basis": "Official SF 1.6 percent rate excerpt explicitly ended 2027-02-28"
+    }
+  ],
+  "scope_note": "This is a small, hand-authored, source-anchored regression set. It is not an expert-reviewed legal gold set and does not measure corpus recall or production accuracy."
+}

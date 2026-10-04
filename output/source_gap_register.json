@@ -1,0 +1,235 @@
+{
+  "gaps": [
+    {
+      "doc_id": "D002",
+      "jurisdiction": "Berkeley, CA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://morganlewis.com/pubs/2026/08/algorithmic-rent-pricing-litigation-expands-under-new-state-and-local-laws",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D015",
+      "jurisdiction": "CA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://caanet.org/compliance-reminder-section-8-acceptance-and-criminal-background-checks-are-fair-housing-issues/",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D017",
+      "jurisdiction": "CA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://california.public.law/codes/civil_code_section_1950.6",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D018",
+      "jurisdiction": "CA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://law.justia.com/codes/california/code-civ/division-3/part-4/title-5/chapter-2/section-1946-2/",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D019",
+      "jurisdiction": "CA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://law.justia.com/codes/california/code-civ/division-3/part-4/title-5/chapter-2/section-1947-12/",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D020",
+      "jurisdiction": "CA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://law.justia.com/codes/california/code-civ/division-3/part-4/title-5/chapter-2/section-1950-5/",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D021",
+      "jurisdiction": "CA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://law.justia.com/codes/california/code-gov/title-2/division-3/part-2-8/chapter-6/article-2/section-12955/",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D028",
+      "jurisdiction": "CA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://www.clearygottlieb.com/news-and-insights/publication-listing/californias-antitrust-law-amendments-kick-in-targeting-algorithmic-pricing",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D030",
+      "jurisdiction": "Cambridge, MA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://www.cambridgeday.com/?p=158097",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D032",
+      "jurisdiction": "Hoboken, NJ",
+      "source_type": "code publisher",
+      "url": "https://ecode360.com/15252438",
+      "disposition": "terms_review_required_not_captured"
+    },
+    {
+      "doc_id": "D033",
+      "jurisdiction": "Hoboken, NJ",
+      "source_type": "code publisher",
+      "url": "https://ecode360.com/15252470",
+      "disposition": "terms_review_required_not_captured"
+    },
+    {
+      "doc_id": "D034",
+      "jurisdiction": "Hoboken, NJ",
+      "source_type": "code publisher",
+      "url": "https://ecode360.com/46833413",
+      "disposition": "covered_by_verified_supplement"
+    },
+    {
+      "doc_id": "D035",
+      "jurisdiction": "Jersey City, NJ",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://hudsoncountyview.com/jersey-city-council-approves-realpage-ban-and-increasing-benefits-for-laborers/",
+      "disposition": "covered_by_verified_supplement"
+    },
+    {
+      "doc_id": "D037",
+      "jurisdiction": "Jersey City, NJ",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://www.morganlewis.com/pubs/2026/08/algorithmic-rent-pricing-litigation-expands-under-new-state-and-local-laws",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D038",
+      "jurisdiction": "Los Angeles, CA",
+      "source_type": "code publisher",
+      "url": "https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/0-0-0-322208",
+      "disposition": "terms_review_required_not_captured"
+    },
+    {
+      "doc_id": "D044",
+      "jurisdiction": "Los Angeles, CA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://members.aagla.org/news/city-of-la-security-deposit-interest-requirement",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D054",
+      "jurisdiction": "MA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://masslandlords.net/can-massachusetts-landlords-charge-an-application-fee/",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D055",
+      "jurisdiction": "MA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://massrealestatelawblog.com/tag/cella-v-attorney-general/",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D056",
+      "jurisdiction": "MA",
+      "source_type": "official",
+      "url": "https://www.mass.gov/doc/803-cmr-5-criminal-offender-record-information-cori-housing/download",
+      "disposition": "official_source_capture_blocked"
+    },
+    {
+      "doc_id": "D059",
+      "jurisdiction": "MA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://www.wbur.org/news/2026/06/23/massachusetts-high-court-rent-control-ballot-question-struck",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D060",
+      "jurisdiction": "NJ",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://daypitney.com/new-jersey-enacts-fair-act-to-prohibit-algorithmic-rent-setting-practices",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D061",
+      "jurisdiction": "NJ",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://law.justia.com/codes/new-jersey/title-10/section-10-5-12/",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D062",
+      "jurisdiction": "NJ",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://law.justia.com/codes/new-jersey/title-2a/section-2a-18-61-1/",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D063",
+      "jurisdiction": "NJ",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://law.justia.com/codes/new-jersey/title-46/section-46-8-21-2/",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D064",
+      "jurisdiction": "NJ",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://law.justia.com/codes/new-jersey/title-46/section-46-8-26/",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D070",
+      "jurisdiction": "Newark, NJ",
+      "source_type": "code publisher",
+      "url": "https://ecode360.com/36623772",
+      "disposition": "recovered_from_official_city_source"
+    },
+    {
+      "doc_id": "D071",
+      "jurisdiction": "Newark, NJ",
+      "source_type": "code publisher",
+      "url": "https://ecode360.com/36637822",
+      "disposition": "terms_review_required_not_captured"
+    },
+    {
+      "doc_id": "D072",
+      "jurisdiction": "Newark, NJ",
+      "source_type": "code publisher",
+      "url": "https://ecode360.com/36642000",
+      "disposition": "terms_review_required_not_captured"
+    },
+    {
+      "doc_id": "D074",
+      "jurisdiction": "San Diego, CA",
+      "source_type": "code publisher",
+      "url": "https://gocodebook.com/library/us/ca/san-diego-zoning/division-11-prohibition-of-anti-competitive-automated-rent-price-fixing/98.1103-use-and-sale-of-algorithmic-devices-prohibited",
+      "disposition": "terms_review_required_not_captured"
+    },
+    {
+      "doc_id": "D075",
+      "jurisdiction": "San Diego, CA",
+      "source_type": "code publisher",
+      "url": "https://gocodebook.com/library/us/ca/san-diego-zoning/division-8-prohibition-of-discrimination-based-on-a-tenant-s-source-of-income",
+      "disposition": "recovered_from_official_city_source"
+    },
+    {
+      "doc_id": "D077",
+      "jurisdiction": "San Diego, CA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://www.lassd.org/resource/city-of-san-diego-tenant-protection-ordinance/",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D086",
+      "jurisdiction": "Santa Ana, CA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://www.ocbj.com/real-estate/santa-ana-bans-landlords-from-using-ai-apartment-rent-pricing-software/",
+      "disposition": "context_only_official_source_preferred"
+    },
+    {
+      "doc_id": "D087",
+      "jurisdiction": "Santa Ana, CA",
+      "source_type": "secondary (law firm / news / mirror)",
+      "url": "https://www.publicceo.com/2026/02/santa-ana-city-council-continues-to-strengthen-tenant-protections-by-banning-anticompetitive-rent-setting-software/",
+      "disposition": "context_only_official_source_preferred"
+    }
+  ]
+}

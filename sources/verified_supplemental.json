@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "S-JC-ALG",
+    "jurisdiction": "Jersey City, NJ",
+    "source_url": "https://www.jerseycitynj.gov/common/pages/GetFile.ashx?key=3949AR0g",
+    "title": "Jersey City Ordinance 25-057",
+    "category": "algorithmic_rent_setting",
+    "status": "in_force",
+    "effective_date": "2025-06-11",
+    "citation": "Jersey City Code Chapter 218, Section 12",
+    "quoted_span": "Preventing Algorithmic Rent-Fixing in the Rental Housing Market, the city can further its commitment to keeping Jersey City affordable and fair.",
+    "retrieval_note": "Official Jersey City ordinance PDF verified 2026-10-03; full text was link-only in the starter manifest."
+  },
+  {
+    "doc_id": "S-HOB-ALG",
+    "jurisdiction": "Hoboken, NJ",
+    "source_url": "https://ecode360.com/46249538",
+    "title": "Hoboken Algorithmic Rent Fixing in Rental Housing Market",
+    "category": "algorithmic_rent_setting",
+    "status": "in_force",
+    "effective_date": "2025-07-09",
+    "citation": "Hoboken Code § 158-2",
+    "quoted_span": "Landlords who rent any residential dwelling unit (defined as any primary residence excluding medical/long-term care or detention facilities) in the City of Hoboken are prohibited",
+    "retrieval_note": "Code publisher text verified 2026-10-03; starter manifest marked this publisher check-terms."
+  }
+]

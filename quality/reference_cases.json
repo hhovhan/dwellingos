@@ -1,0 +1,25 @@
+{
+  "review_status": "source_anchored_nonattorney_review; not an expert legal gold set",
+  "cases": [
+    {"id":"CA-before","rule_id":"CA-ALG-01","property":{"postal_city":"Los Angeles","state":"CA"},"as_of":"2025-12-31","expected":"not_yet_effective","basis":"Official AB 325 timing, before 2026-01-01"},
+    {"id":"CA-after","rule_id":"CA-ALG-01","property":{"postal_city":"Los Angeles","state":"CA"},"as_of":"2026-01-02","expected":"applies","basis":"Official AB 325 timing, after 2026-01-01"},
+    {"id":"NJ-before","rule_id":"NJ-ALG-01","property":{"postal_city":"Newark","state":"NJ"},"as_of":"2026-10-01","expected":"not_yet_effective","basis":"New Jersey FAIR Act effective 2027-07-01"},
+    {"id":"NJ-after","rule_id":"NJ-ALG-01","property":{"postal_city":"Newark","state":"NJ"},"as_of":"2027-07-02","expected":"applies","basis":"New Jersey FAIR Act effective 2027-07-01"},
+    {"id":"Newark-missing","rule_id":"NEWARK-RENT-01","property":{"postal_city":"Newark","state":"NJ"},"as_of":"2026-10-01","expected":"unknown","basis":"Official city says only certain units are covered; coverage record absent"},
+    {"id":"Newark-covered","rule_id":"NEWARK-RENT-01","property":{"postal_city":"Newark","state":"NJ","rent_control_status":"covered"},"as_of":"2026-10-01","expected":"applies","basis":"Official Newark 19:2-3.1 ceiling, coverage separately established"},
+    {"id":"Newark-exempt","rule_id":"NEWARK-RENT-01","property":{"postal_city":"Newark","state":"NJ","rent_control_status":"exempt"},"as_of":"2026-10-01","expected":"excluded","basis":"Covered-unit condition is false"},
+    {"id":"Newark-outside","rule_id":"NEWARK-RENT-01","property":{"postal_city":"Jersey City","state":"NJ","rent_control_status":"covered"},"as_of":"2026-10-01","expected":"excluded","basis":"Newark ordinance has city jurisdiction"},
+    {"id":"SanDiego-missing","rule_id":"SD-INCOME-01","property":{"postal_city":"San Diego","state":"CA"},"as_of":"2026-10-01","expected":"unknown","basis":"Section 98.0804 owner-occupied exception cannot be resolved"},
+    {"id":"SanDiego-covered","rule_id":"SD-INCOME-01","property":{"postal_city":"San Diego","state":"CA","owner_occupied_shared_kitchen_or_bath":"no"},"as_of":"2026-10-01","expected":"applies","basis":"Section 98.0803 rule with section 98.0804 exception ruled out"},
+    {"id":"SanDiego-exempt","rule_id":"SD-INCOME-01","property":{"postal_city":"San Diego","state":"CA","owner_occupied_shared_kitchen_or_bath":"yes"},"as_of":"2026-10-01","expected":"excluded","basis":"Section 98.0804 owner-occupied shared-facilities exception"},
+    {"id":"SanDiego-outside","rule_id":"SD-INCOME-01","property":{"postal_city":"Los Angeles","state":"CA","owner_occupied_shared_kitchen_or_bath":"no"},"as_of":"2026-10-01","expected":"excluded","basis":"San Diego ordinance has city jurisdiction"},
+    {"id":"Boston-program-unknown","rule_id":"AUTO-D010-SCRE-012","property":{"postal_city":"Boston","state":"MA"},"as_of":"2026-10-01","expected":"unknown","basis":"DND/BPDA participation is missing"},
+    {"id":"Boston-program-yes","rule_id":"AUTO-D010-SCRE-012","property":{"postal_city":"Boston","state":"MA","DND_or_BPDA_program_participation":"yes"},"as_of":"2026-10-01","expected":"applies","basis":"DND/BPDA participation affirmatively established"},
+    {"id":"Boston-program-no","rule_id":"AUTO-D010-SCRE-012","property":{"postal_city":"Boston","state":"MA","DND_or_BPDA_program_participation":"no"},"as_of":"2026-10-01","expected":"excluded","basis":"DND/BPDA participation affirmatively excluded"},
+    {"id":"Dorchester-alias","rule_id":"AUTO-D010-SCRE-012","property":{"postal_city":"Dorchester","state":"MA"},"as_of":"2026-10-01","expected":"unknown","basis":"Dorchester mailing label routes to Boston, but DND/BPDA participation remains unknown"},
+    {"id":"SanYsidro-alias","rule_id":"SD-INCOME-01","property":{"postal_city":"San Ysidro","state":"CA"},"as_of":"2026-10-01","expected":"unknown","basis":"San Ysidro mailing label routes to San Diego, but shared-facilities exception remains unknown"},
+    {"id":"Massachusetts-failed-ballot","rule_id":"AUTO-D011-RENT-013","property":{"postal_city":"Boston","state":"MA"},"as_of":"2026-10-01","expected":"excluded","basis":"Failed home-rule proposal does not produce a current-law decision"},
+    {"id":"LosAngeles-expired-rate","rule_id":"AUTO-D042-RENT-028","property":{"postal_city":"Los Angeles","state":"CA"},"as_of":"2026-10-01","expected":"unknown","basis":"Official LA rate excerpt explicitly ended 2026-06-30; a newer rate source is required"},
+    {"id":"SanFrancisco-future-rate","rule_id":"AUTO-D080-RENT-049","property":{"postal_city":"San Francisco","state":"CA"},"as_of":"2027-03-01","expected":"unknown","basis":"Official SF 1.6 percent rate excerpt explicitly ended 2027-02-28"}
+  ]
+}

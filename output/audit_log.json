@@ -1,0 +1,32 @@
+{
+  "stages": [
+    {
+      "stage": "corpus_audit",
+      "status": "passed",
+      "documents": 87,
+      "issues": 0
+    },
+    {
+      "stage": "rule_extraction",
+      "status": "passed",
+      "rules": 57,
+      "evidence_policy": "verbatim source span required"
+    },
+    {
+      "stage": "jurisdiction_and_lookup",
+      "status": "passed",
+      "properties": 500
+    },
+    {
+      "stage": "change_tracking",
+      "status": "passed",
+      "tests": [
+        "T1",
+        "T2",
+        "T3",
+        "T4",
+        "T5"
+      ]
+    }
+  ]
+}

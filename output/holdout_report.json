@@ -1,0 +1,195 @@
+{
+  "annotation_method": "Source-first, non-attorney annotations from original starter-pack text and raw address/Census evidence; locked before running the holdout scorer.",
+  "scope": "Targeted extraction recall and conservative address handling, not complete legal-rule recall or parcel-level truth.",
+  "extraction": {
+    "passed": 9,
+    "total": 9,
+    "cases": [
+      {
+        "id": "E01",
+        "doc_id": "D003",
+        "passed": true,
+        "finding": "target found",
+        "candidate_count": 6
+      },
+      {
+        "id": "E02",
+        "doc_id": "D005",
+        "passed": true,
+        "finding": "target found",
+        "candidate_count": 13
+      },
+      {
+        "id": "E03",
+        "doc_id": "D008",
+        "passed": true,
+        "finding": "target found",
+        "candidate_count": 2
+      },
+      {
+        "id": "E04",
+        "doc_id": "D050",
+        "passed": true,
+        "finding": "target found",
+        "candidate_count": 2
+      },
+      {
+        "id": "E05",
+        "doc_id": "D058",
+        "passed": true,
+        "finding": "target found",
+        "candidate_count": 7
+      },
+      {
+        "id": "E06",
+        "doc_id": "D080",
+        "passed": true,
+        "finding": "target found",
+        "candidate_count": 3
+      },
+      {
+        "id": "E07",
+        "doc_id": "D081",
+        "passed": true,
+        "finding": "target found",
+        "candidate_count": 8
+      },
+      {
+        "id": "E08",
+        "doc_id": "D083",
+        "passed": true,
+        "finding": "target found",
+        "candidate_count": 4
+      },
+      {
+        "id": "E09",
+        "doc_id": "D046",
+        "passed": true,
+        "finding": "clean negative",
+        "candidate_count": 0
+      }
+    ]
+  },
+  "addresses": {
+    "passed": 11,
+    "total": 11,
+    "cases": [
+      {
+        "id": "A0001",
+        "passed": true,
+        "checks": {
+          "raw_record_preserved": true,
+          "geocoder_status": true,
+          "city_boundary_not_proven": true,
+          "matched_city": true
+        }
+      },
+      {
+        "id": "A0005",
+        "passed": true,
+        "checks": {
+          "raw_record_preserved": true,
+          "geocoder_status": true,
+          "city_boundary_not_proven": true,
+          "matched_city": true
+        }
+      },
+      {
+        "id": "A0008",
+        "passed": true,
+        "checks": {
+          "raw_record_preserved": true,
+          "geocoder_status": true,
+          "city_boundary_not_proven": true,
+          "matched_city": true
+        }
+      },
+      {
+        "id": "A0010",
+        "passed": true,
+        "checks": {
+          "raw_record_preserved": true,
+          "geocoder_status": true,
+          "city_boundary_not_proven": true,
+          "matched_city": true
+        }
+      },
+      {
+        "id": "A0013",
+        "passed": true,
+        "checks": {
+          "raw_record_preserved": true,
+          "geocoder_status": true,
+          "city_boundary_not_proven": true,
+          "matched_city": true
+        }
+      },
+      {
+        "id": "A0002",
+        "passed": true,
+        "checks": {
+          "raw_record_preserved": true,
+          "geocoder_status": true,
+          "city_boundary_not_proven": true,
+          "abstention_reason": true
+        }
+      },
+      {
+        "id": "A0004",
+        "passed": true,
+        "checks": {
+          "raw_record_preserved": true,
+          "geocoder_status": true,
+          "city_boundary_not_proven": true,
+          "abstention_reason": true
+        }
+      },
+      {
+        "id": "A0009",
+        "passed": true,
+        "checks": {
+          "raw_record_preserved": true,
+          "geocoder_status": true,
+          "city_boundary_not_proven": true,
+          "abstention_reason": true
+        }
+      },
+      {
+        "id": "A0014",
+        "passed": true,
+        "checks": {
+          "raw_record_preserved": true,
+          "geocoder_status": true,
+          "city_boundary_not_proven": true,
+          "abstention_reason": true
+        }
+      },
+      {
+        "id": "A0020",
+        "passed": true,
+        "checks": {
+          "raw_record_preserved": true,
+          "geocoder_status": true,
+          "city_boundary_not_proven": true,
+          "abstention_reason": true
+        }
+      },
+      {
+        "id": "A0003",
+        "passed": true,
+        "checks": {
+          "raw_record_preserved": true,
+          "geocoder_status": true,
+          "city_boundary_not_proven": true,
+          "zip_state_conflict": true
+        }
+      }
+    ]
+  },
+  "limitations": [
+    "Non-attorney source-first annotations; no independent legal expert review.",
+    "Targeted clauses do not measure corpus-wide recall or precision.",
+    "Census address-range matches are not parcel-boundary or legal-jurisdiction proof.",
+    "No access to the organizer's private scoring script or hidden cases."
+  ]
+}

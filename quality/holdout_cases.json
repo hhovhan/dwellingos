@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "annotation_method": "Source-first, non-attorney annotations from original starter-pack text and raw address/Census evidence; locked before running the holdout scorer.",
+  "scope": "Targeted extraction recall and conservative address handling, not complete legal-rule recall or parcel-level truth.",
+  "extraction": [
+    {"id":"E01","doc_id":"D003","jurisdiction":"Berkeley, CA","category":"screening_restrictions","must_quote":"prohibits rental housing providers in Berkeley from asking about and using criminal history"},
+    {"id":"E02","doc_id":"D005","jurisdiction":"Berkeley, CA","category":"application_screening_fees","must_quote":"The landlord cannot charge a prospective tenant a screening fee if no"},
+    {"id":"E03","doc_id":"D008","jurisdiction":"Berkeley, CA","category":"rent_increase_limits","must_quote":"increase the 2025 permanent rent ceilings by 1.0%"},
+    {"id":"E04","doc_id":"D050","jurisdiction":"MA","category":"just_cause_eviction","must_quote":"fourteen days' notice to quit"},
+    {"id":"E05","doc_id":"D058","jurisdiction":"MA","category":"just_cause_eviction","must_quote":"A notice to quit for nonpayment of rent given in writing"},
+    {"id":"E06","doc_id":"D080","jurisdiction":"San Francisco, CA","category":"rent_increase_limits","must_quote":"annual allowable increase amount effective March 1, 2026"},
+    {"id":"E07","doc_id":"D081","jurisdiction":"San Francisco, CA","category":"algorithmic_rent_setting","must_quote":"prohibits the sale or use of algorithmic devices"},
+    {"id":"E08","doc_id":"D083","jurisdiction":"San Francisco, CA","category":"rent_increase_limits","must_quote":"1.6% for March 1, 2026"},
+    {"id":"E09","doc_id":"D046","jurisdiction":"MA","negative":"Bill status page only; no operative bill text is captured in this file."}
+  ],
+  "addresses": [
+    {"id":"A0001","expected_geocode":"matched","expected_city":"Los Angeles"},
+    {"id":"A0005","expected_geocode":"matched","expected_city":"Berkeley"},
+    {"id":"A0008","expected_geocode":"matched","expected_city":"Jersey City"},
+    {"id":"A0010","expected_geocode":"matched","expected_city":"Cambridge"},
+    {"id":"A0013","expected_geocode":"matched","expected_city":"Newark"},
+    {"id":"A0002","expected_geocode":"unresolved","reason_contains":"address number or range differs"},
+    {"id":"A0004","expected_geocode":"unresolved","reason_contains":"0 address matches"},
+    {"id":"A0009","expected_geocode":"unresolved","reason_contains":"2 address matches"},
+    {"id":"A0014","expected_geocode":"unresolved","reason_contains":"0 address matches"},
+    {"id":"A0020","expected_geocode":"unresolved","reason_contains":"address number or range differs"},
+    {"id":"A0003","expected_zip_state_conflict":true,"expected_geocode":"unresolved"}
+  ]
+}

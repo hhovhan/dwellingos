@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DwellingOS — Property Law Passport</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <main id="top">
+    <nav class="site-nav"><a class="brand" href="#top" aria-label="DwellingOS home"><span class="mark">D</span><strong>DWELLING<span>OS</span></strong></a><span class="tag">REALPAGE CHALLENGE PROTOTYPE</span><div class="nav-actions"><a href="#search-panel">SEARCH</a><a href="#workflow">METHOD</a><a class="nav-demo" href="#demo-paths">START THE DEMO <span aria-hidden="true">↗</span></a></div></nav>
+    <section class="hero">
+      <div class="hero-copy"><p class="eyebrow">THE PROPERTY LAW PASSPORT / DEMO EDITION</p>
+      <h1>ONE ADDRESS.<br>RULES <span>WITH PROOF.</span></h1>
+      <p class="lede">The rental-law answer for a building—what applies, what changes, what source proves it, and what we still need to know.</p>
+      <div class="hero-actions"><a href="#demo-paths">RUN THE LIVE DEMO <span aria-hidden="true">↗</span></a><a href="#search-panel">SEARCH 500 PROPERTIES <span aria-hidden="true">↓</span></a></div></div>
+      <div class="hero-art" aria-hidden="true"><div class="art-sun"></div><div class="art-house"><span></span><span></span><span></span></div><div class="art-stamp">SOURCE<br>BACKED <span>✓</span></div><div class="art-paper art-paper-back"></div><div class="art-paper art-paper-front"><small>DWELLING / 001</small><strong>LAW<br>PASSPORT</strong><span>DATE • SOURCE • COVERAGE</span></div></div>
+      <div id="metrics" class="metrics" aria-label="System status"></div>
+    </section>
+    <section id="demo-paths" class="demo-paths" aria-labelledby="demo-title">
+      <div class="section-heading"><div><p class="eyebrow">THE LIVE JUDGE WALKTHROUGH</p><h2 id="demo-title">FOUR CLICKS.<br>ONE ENGINE.</h2></div><p>Use the guided path to show uncertainty, jurisdiction, effective dates, and portfolio-wide change. Each card opens the real output—not a mock screen.</p></div>
+      <div class="demo-grid">
+        <button type="button" data-demo-property="A0013" data-demo-date="2026-10-01"><span>01 / EVIDENCE GAP</span><strong>KNOW WHEN<br>NOT TO GUESS</strong><small>Newark · coverage facts are missing</small><em>OPEN PASSPORT ↗</em></button>
+        <button type="button" data-demo-property="A0065" data-demo-date="2026-10-01"><span>02 / JURISDICTION</span><strong>THE CITY<br>ISN'T SIMPLE</strong><small>Dorchester is a mailing name; boundaries still need proof</small><em>OPEN PASSPORT ↗</em></button>
+        <button type="button" data-demo-property="A0001" data-demo-date="2025-12-31"><span>03 / EFFECTIVE DATE</span><strong>BEFORE.<br>AFTER.</strong><small>See a California rule turn on across two dates</small><em>OPEN PASSPORT ↗</em></button>
+        <button type="button" data-demo-changes="true"><span>04 / PORTFOLIO IMPACT</span><strong>ONE LAW.<br>MANY HOMES.</strong><small>Trace the candidate addresses affected by change</small><em>VIEW CHANGE ↗</em></button>
+      </div>
+    </section>
+    <section id="search-panel" class="search-panel">
+      <div class="section-heading"><div><p class="eyebrow">SEARCH THE SUPPLIED DATA</p><h2>FIND A BUILDING.<br>SEE THE PROOF.</h2></div><p>Search by sample ID, street or city. Every answer is tied to a date and source.</p></div>
+      <label for="search">Find a property</label>
+      <input id="search" autocomplete="off" placeholder="Try A0001, 6238 DE LONGPRE, or Dorchester" aria-describedby="search-hint">
+      <div id="matches" role="status" aria-live="polite"></div>
+      <p id="search-hint" class="caption">Choose a result to open its passport. Press Enter to open the first match.</p>
+      <label for="as-of">Scenario date</label>
+      <input id="as-of" type="date" value="2026-10-01" min="2025-12-31" max="2027-07-02">
+      <div class="date-shortcuts"><button type="button" data-date="2025-12-31">Before CA law</button><button type="button" data-date="2026-01-02">After CA law</button><button type="button" data-date="2026-10-01">Challenge date</button><button type="button" data-date="2027-07-02">After NJ law</button></div>
+      <p class="caption">Dates outside the captured challenge period require new source review. Earlier snapshots of amended laws are not available.</p>
+    </section>
+    <section id="passport" class="passport hidden"></section>
+    <section id="changes" class="changes hidden"></section>
+    <section id="operator" class="operator hidden" aria-labelledby="operator-title">
+      <div class="section-heading"><div><p class="eyebrow">LOCAL OPERATOR WORKBENCH</p><h2 id="operator-title">Put a new record through the real engine.</h2></div><p>This local-server workflow saves demo properties and previews new legal text for review. It does not automatically discover or publish laws; it is unavailable on a static-only host.</p></div>
+      <div class="operator-grid">
+        <form id="property-form" class="operator-card">
+          <h3>Add a property</h3><p>City rules stay unresolved until its municipal boundary is verified.</p>
+          <div class="operator-fields"><label>Demo ID<input name="address_id" required pattern="DEMO-.*" value="DEMO-001"></label><label>Street address<input name="street_address" required placeholder="1 Example Street"></label><label>Mailing city<input name="postal_city" required placeholder="Newark"></label><label>State<select name="state"><option>NJ</option><option>CA</option><option>MA</option></select></label><label>ZIP<input name="zip" inputmode="numeric" placeholder="Optional"></label><label>Units<input name="units" type="number" min="0" placeholder="Optional"></label><label>Year built<input name="year_built" type="number" min="1700" placeholder="Optional"></label></div>
+          <button type="submit">Save and evaluate property</button><div id="property-result" class="operator-result" role="status" aria-live="polite"></div>
+        </form>
+        <form id="law-form" class="operator-card">
+          <h3>Preview a new law source</h3><p>Extraction finds clauses. Reviewer inputs and a source quotation determine what can be evaluated.</p>
+          <button type="button" id="load-law-example" class="secondary-button">Load a captured California source example</button>
+          <label>Source URL<input name="source_url" type="url" required placeholder="https://official-source.example/ordinance"></label>
+          <label>Jurisdiction<select name="jurisdiction"><option>NJ</option><option>CA</option><option>MA</option><option>Newark, NJ</option><option>San Francisco, CA</option><option>Boston, MA</option></select></label>
+          <label>Captured legal text<textarea name="source_text" rows="4" required placeholder="Paste the source provision here"></textarea></label>
+          <details><summary>Reviewer fields for impact preview</summary><div class="operator-fields"><label>Rule title<input name="title" placeholder="Short descriptive title"></label><label>Citation<input name="citation" placeholder="Code section"></label><label>Legal status<select name="status"><option value="in_force">In force</option><option value="not_yet_effective">Not yet effective</option><option value="pending">Pending</option><option value="failed">Failed</option></select></label><label>Effective date<input name="effective_date" type="date"></label><label>Coverage explanation<input name="coverage_conditions" placeholder="Which properties are covered?"></label><label>Minimum units, if proven by source<input name="min_units" type="number" min="0" placeholder="Leave empty if unknown"></label><label class="checkbox-label"><input name="jurisdiction_wide" type="checkbox"> No property-specific coverage condition in reviewed source</label></div></details>
+          <button type="submit">Extract and preview impact</button><div id="law-result" class="operator-result" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+    <section id="workflow" class="workflow"><div class="section-heading"><div><p class="eyebrow">FROM DEMO TO OPERATION</p><h2>One operator action at a time.</h2></div><p>Search a building, see the conditional answer, verify the named fact, and re-evaluate. The 500 records test that workflow; they are not 20 million legally verified passports.</p></div><div class="workflow-grid"><article><span>01</span><strong>Find</strong><p>Import property records and resolve the legal jurisdiction independently of the mailing address.</p></article><article><span>02</span><strong>Verify</strong><p>Check the highlighted missing building fact with a responsible source; do not silently guess.</p></article><article><span>03</span><strong>Decide</strong><p>Apply reviewed rules by jurisdiction and date; show citations and unresolved conditions.</p></article><article><span>04</span><strong>Refresh</strong><p>Monitor official sources, send changes to expert review, then recompute affected homes.</p></article></div><p class="scale-note"><b>Scale path, measured:</b> the indexed data pipeline imported 20 million <em>synthetic</em> property rows in 133.5 seconds. Production still needs source monitoring, expert review, parcel boundaries, and verified property facts.</p></section>
+    <section id="coverage" class="coverage hidden"></section>
+    <footer>Independent prototype for the RealPage Rental Housing Law Navigator challenge · Not affiliated with or endorsed by RealPage · Not legal advice</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
