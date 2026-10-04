@@ -1,93 +1,53 @@
 # DwellingOS
 
-An evidence-first Property Law Passport for the RealPage Rental Housing Law Navigator challenge.
+**A source-backed Property Law Passport for RealPage's Rental Housing Law Navigator challenge.** Enter one of the supplied 500 addresses to see the rules that may apply on a given date, the exact source behind each result, and the property fact an operator must verify before treating a conditional rule as settled.
 
-DwellingOS turns the organizer's 500-property dataset into date-specific,
-six-category passports. It never treats missing coverage facts as permission to
-guess: uncertain results are labelled `unknown` and explain what evidence is
-still required.
+**[Open the live judge demo](https://dwelling.hovhannes.dev/)** · [One-minute demo plan](docs/demo-video-script.md) · [Technical architecture](docs/architecture.md) · [Measured scale path](docs/scale-architecture.md)
 
-## Verify the complete pipeline
+![Live DwellingOS passport for a Newark sample property: a conditional 4% rent rule, its source, and the next fact to verify](docs/assets/newark-passport.png)
+
+*Live product capture, not a mockup. The 4% figure is conditional on legal coverage; the sample property has not been certified as covered.*
+
+## Try the judge path in one minute
+
+1. In the [live demo](https://dwelling.hovhannes.dev/), choose **01 · Unknown**. See the possible Newark rent ceiling, its source, and the explicit `rent_control_status` evidence gap. The hypothetical fact control shows how the decision would change; it does not save or verify a fact.
+2. Choose **03 · Date**. Compare a California rule before and after its effective date.
+3. Choose **04 · Impact**. Inspect the five supplied law-change scenarios, candidate addresses, and possible state/local conflicts. Candidate counts are not confirmed building-level coverage.
+
+The interface is a static, precomputed judge demo. The local server adds a separate operator workbench for importing a new property and previewing a newly supplied law; that workflow is **not** available on static hosting.
+
+## Reproduce the build
+
+Requires Python 3 and Node.js/npm. The challenge starter pack is bundled, so no API key or machine-specific path is required for the core pipeline.
 
 ```bash
-npm run pipeline
-npm start
+git clone https://github.com/hhovhan/dwellingos.git
+cd dwellingos
+npm run pipeline       # audit, extract, evaluate, test, validate outputs
+npm run build:static   # create the deployable dist/ snapshot
+npm start              # local product + operator workbench at http://127.0.0.1:4173
 ```
 
-Open `http://127.0.0.1:4173`.
+The GitHub clone command works for reviewers **only after this repository is public**; until then, access requires the owner's authorization. The competition JSON files are in `output/rules.json`, `output/lookups.json`, and `output/changes.json`.
 
-The organizer-provided corpus and 500-address dataset are bundled under
-`realpage-starter-pack/`, so these commands work from a clean checkout without
-machine-specific paths.
+| Stage | Implementation | Checkable artifact |
+| --- | --- | --- |
+| Source audit and extraction | `scripts/audit_corpus.py`, `scripts/extract_rules.py`, `engine/law_intake.py` | `output/corpus_audit.json`, `output/rules.json`, candidate/rejection queues |
+| Address and date decisions | `engine/portfolio.py`, `engine/evaluator.py`, `scripts/build_outputs.py` | 500 passports and `output/lookups.json` |
+| Law-change impact | `engine/change_tracker.py` | `output/changes.json`, five supplied scenarios |
+| New-source review and larger portfolios | `engine/source_monitor.py`, `scripts/intake_law.py`, `scripts/approve_candidate.py`, `scripts/portfolio_cli.py` | Reviewed intake path and indexed SQLite assessment |
+| Regression and release gates | `tests/`, `quality/`, `scripts/release_check.py` | Unit, holdout, reference, and output-contract results |
 
-## Current verified build
+The decision path is **source text → evidence-linked rule candidate → review gate → deterministic jurisdiction/date/coverage evaluator → cited passport**. A text candidate cannot silently become an operative law; unfamiliar sources require a reviewer to supply legal force, dates, coverage and citation. The rule engine does not use an LLM to make the final applicability decision. [Architecture diagram and failure policy](docs/architecture.md).
 
-- 500/500 properties processed
-- 57 evidence-linked rules
-- 5,419 deterministic address-rule evaluations
-- 47 automated tests, a separate 9-case extraction/11-case address holdout, and 20 source-anchored, non-attorney rule-decision cases
-- 100% citation and verbatim-evidence completeness among emitted rules
-- Zero unsupported extraction candidates
-- 20-million-row synthetic portfolio import and indexed rule assessment completed (see measured limits below)
-- 27 supplied ZIP/state-prefix conflicts surfaced as blocking address-verification gaps, not silently accepted as valid locations
-- 383 single Census address-range matches; 117 unresolved or ambiguous checks. None is claimed as parcel-level boundary proof.
+## What is verified—and what is not
 
-## Pipeline
+On the current build, the pipeline processes **500/500** sample properties into **5,419** rule evaluations, emits **57** evidence-linked candidate rules, and passes **47** automated tests, **9/9** targeted extraction checks, **11/11** targeted address checks, and **20/20** non-attorney reference decisions. All *emitted* rules have a source URL, citation and verbatim quotation. These checks do **not** measure full-corpus extraction recall or predict the organizer's private score. [Holdout method](docs/holdout-evaluation.md) · [One-page method and evidence backlog](docs/method-note.md).
 
-1. Audit all 87 starter-pack corpus records.
-2. Extract evidence-linked candidate rules from captured source texts using reviewed, source-specific anchors; queue unfamiliar text for separate human-reviewed intake.
-3. Add two separately verified city sources needed for the official boundary test.
-4. Map all 500 properties to state and provisional legal city, including reviewed sample aliases; flag that municipal boundaries still need independent verification.
-   `python3 scripts/geocode_samples.py` refreshes the optional Census incorporated-place evidence before rebuilding outputs. This external check does not settle parcel boundaries or override unverified legal-city decisions.
-5. Evaluate jurisdiction, status and effective dates without using an LLM for final decisions.
-6. Generate `rules.json`, `lookups.json`, `changes.json`, passports, an audit log and a quality report.
-7. Run the automated test suite.
+The 87-entry starter manifest contains 54 captured texts and 33 link-only records. Of the 57 emitted rules, 53 are from supplied captured texts and four are from independently checked supplements; supplemental rules are **not** claimed as supplied-corpus citation credit. Much of the baseline extraction uses explicit, document-specific review profiles. A separate generic intake proposes candidates from unfamiliar text, but it does not auto-publish them. No attorney has certified the rules.
 
-## Evidence policy
+The sample also has unresolved address and building facts: 383 single Census address-range matches, 117 unresolved or ambiguous matches, 27 ZIP/state-prefix conflicts, and 462 provisional postal-city assignments. A Census address-range match is **not** parcel-level municipal-boundary proof. Missing units, construction years, owner type, and occupancy evidence remain visible; the evaluator returns `unknown` instead of inventing them.
 
-- Every rule must carry a source URL, citation, provenance and a verbatim supporting span.
-- `unknown` is returned when property facts cannot prove coverage.
-- Pending, failed and future-effective law are kept separate from current law.
-- The interface always displays the answer date and “Not legal advice.”
+The indexed portfolio path imported **20 million synthetic rows** in 133.488 seconds and assessed 2 million city candidates against one rule in 25.927 seconds on this machine. This demonstrates bounded-memory import and indexed evaluation at that row count—not verified law coverage, fresh facts for 20 million real homes, concurrent production reliability, or a deployable RealPage integration. [Benchmark details and commands](docs/scale-architecture.md).
 
-The extractor produces source-reviewed hackathon candidates, not
-attorney-validated production legal advice. Thirty-three starter-manifest
-entries are link-only: 22 are secondary context, two have verified supplements,
-two now have official-city-source recoveries, six publisher pages remain under
-terms review, and one official regulation remains capture-blocked. The 20-case
-reference suite catches selected decision regressions but is not a complete
-expert-reviewed legal gold set.
-
-## New laws and larger portfolios
-
-The 500-property static website is the competition demonstration. `scripts/check_source.py`
-queues changes to a named official source, `scripts/intake_law.py` proposes
-verbatim candidates from unfamiliar text, and `scripts/approve_candidate.py`
-records reviewed rules. `scripts/portfolio_cli.py` streams new properties into
-an indexed database and evaluates a selected property or jurisdiction on demand
-through the same rule engine. See [scale architecture](docs/scale-architecture.md)
-and the [one-page method note](docs/method-note.md) for what has been measured
-and what 20-million-property deployment would still require.
-
-The 20-million-row synthetic run took 133.488 seconds to import, 3.185 seconds
-to select 2 million city candidates and 25.927 seconds to evaluate those
-candidates against one reviewed rule. This is a scale test of the data path,
-not proof of verified boundaries, complete law coverage or production service
-reliability.
-
-With `npm start`, the local website exposes an operator workbench: import a
-`DEMO-` property into a persistent SQLite portfolio, or paste a dated HTTPS
-source to extract a verbatim candidate and preview its jurisdiction-wide
-impact after filling reviewer fields. New properties with unverified municipal
-boundaries have city rules withheld. A source preview never publishes a law;
-human legal/source review remains required. The workbench is **local-only**:
-static hosting displays the 500-property demonstration without these API
-operations. Test it locally or show it in the technical video.
-
-The [full RealPage presentation audit](docs/realpage-presentation-audit.md) records the 100-point rubric and six explicit judge traps. The [two-minute demo script](docs/demo-video-script.md) follows the live product and marks every claim that remains provisional.
-
-## Static deployment
-
-The deployable site is entirely inside `public/`. Platforms that support a
-static output directory can publish that folder directly; `vercel.json`
-contains the matching Vercel configuration.
+This is an independent hackathon research prototype, not legal advice, a compliance certification, or a product endorsed by RealPage.
