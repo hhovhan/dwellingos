@@ -172,7 +172,10 @@ def assess_rule(connection, rule, as_of, page_size=1000):
                 break
             for row in rows:
                 value = evaluate(rule, dict(row), as_of)
-                label = value["result"] if value else "not_applicable"
+                label = (value["result"] if value else
+                         "jurisdiction_unverified" if rule["level"] == "city" and
+                         row["jurisdiction_evidence"] in {"legal_boundary_unverified", "supplied_legal_city_unverified"}
+                         else "not_applicable")
                 counts[label] += 1
                 if len(examples.get(label, [])) < 5:
                     examples.setdefault(label, []).append(row["address_id"])

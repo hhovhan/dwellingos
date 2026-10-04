@@ -2,6 +2,7 @@
 
 import argparse
 import sys
+from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -9,6 +10,18 @@ from engine.common import OUTPUT, read_json
 from engine.portfolio import assess_rule, connect, impact, import_csv, passport, portfolio_stats
 
 parser = argparse.ArgumentParser(description=__doc__)
+
+
+def valid_as_of(value):
+    try:
+        date.fromisoformat(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("--as-of must be a valid YYYY-MM-DD date") from exc
+    if len(value) != 10:
+        raise argparse.ArgumentTypeError("--as-of must be a valid YYYY-MM-DD date")
+    return value
+
+
 parser.add_argument("--database", type=Path, required=True)
 subcommands = parser.add_subparsers(dest="command", required=True)
 subcommands.add_parser("stats")
@@ -21,10 +34,10 @@ impact_command.add_argument("jurisdiction", help="State code or 'City, ST'")
 impact_command.add_argument("--limit", type=int, default=20)
 assess_command = subcommands.add_parser("assess")
 assess_command.add_argument("rule_id")
-assess_command.add_argument("--as-of", default="2026-10-01")
+assess_command.add_argument("--as-of", type=valid_as_of, default="2026-10-01")
 passport_command = subcommands.add_parser("passport")
 passport_command.add_argument("address_id")
-passport_command.add_argument("--as-of", default="2026-10-01")
+passport_command.add_argument("--as-of", type=valid_as_of, default="2026-10-01")
 args = parser.parse_args()
 args.database.parent.mkdir(parents=True, exist_ok=True)
 database = connect(args.database)

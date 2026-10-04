@@ -19,7 +19,7 @@
 - [x] 390px mobile verification with no horizontal overflow
 - [x] Static-host deployment configuration
 - [ ] Public GitHub URL
-- [ ] Public deployment URL
+- [x] Public deployment URL: https://dwelling.hovhannes.dev/
 - [ ] Recorded and uploaded videos
 - [ ] Team member accounts attached on Hack-Nation
 - [ ] Submission completed on Hack-Nation and the backup Google form
@@ -27,7 +27,7 @@
 ## Final human checks
 
 - Replace team placeholders with real names and contributions.
-- Confirm the organizer’s exact deadline and video-duration limits.
+- Confirm the organizer’s exact deadline. Hack-Nation stated three approximately one-minute videos: team, demo and teach/technical.
 - Verify every public URL in an incognito window.
 - Run `npm run pipeline` from a clean checkout.
 - Do not claim production legal accuracy or legal advice.
@@ -35,7 +35,7 @@
 ## Verified local release
 
 - 57 rules and 5,419 evaluations
-- 46 automated tests, 9 extraction/11 address holdout checks, and 20 non-attorney reference cases passing
+- 47 automated tests, 9 extraction/11 address holdout checks, and 20 non-attorney reference cases passing
 - Census address-range check: 383 single matches; 117 unresolved or ambiguous. Parcel-level municipal boundaries remain unverified.
 - Local operator workbench imports a `DEMO-` property and previews new-source impact; static deployment does not host these operations.
 - All 500 properties have six category summaries

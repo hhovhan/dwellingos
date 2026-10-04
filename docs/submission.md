@@ -24,15 +24,15 @@ Search any of the 500 challenge properties. DwellingOS resolves its legal city, 
 
 Python performs corpus auditing, automated candidate extraction, jurisdiction resolution, rule evaluation, change tracking and quality reporting. A dependency-free JavaScript interface serves the resulting passports. The pipeline produces `rules.json`, `lookups.json` and `changes.json` in the organizer formats.
 
-## Verified results — October 3, 2026 build
+## Verified results — October 4, 2026 build
 
 - 500/500 property IDs processed
-- 55 evidence-linked rules after state-by-state source review
-- 5,319 deterministic address-rule evaluations
-- 100% source-link and supporting-span completeness among emitted candidates
+- 57 evidence-linked rules after state-by-state source review: 53 from supplied captured texts and 4 clearly identified external supplements
+- 5,419 deterministic address-rule evaluations
+- 100% source-link and supporting-span completeness among emitted candidates; this is an internal audit, not a claimed organizer citation score. The organizer says independently saved link-only texts do not count toward its supplied-corpus citation metric.
 - Zero unsupported extraction candidates
 - Official change scenarios produce affected sets of 250, 90, 140, 110 and 0
-- 26 automated tests plus release and browser checks
+- 47 automated tests, 9 extraction/11 address holdout checks, 20 non-attorney reference cases, plus release and browser checks
 - Desktop search/detail flow passed with no console errors
 - 390px mobile viewport passed with zero horizontal overflow
 

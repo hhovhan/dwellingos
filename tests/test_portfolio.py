@@ -44,8 +44,10 @@ class PortfolioTests(unittest.TestCase):
                 "extraction_mode": "generic_candidate_reviewed",
                 "coverage_spec": [{"field": "units", "op": "gte", "value": 5}],
             }
-            self.assertEqual({"applies": 1}, assess_rule(database, reviewed_rule, "2026-10-03")["results"])
-            self.assertEqual("applies", passport(database, "b", [reviewed_rule], "2026-10-03")["rules"][0]["result"])
+            self.assertEqual({"jurisdiction_unverified": 1}, assess_rule(database, reviewed_rule, "2026-10-03")["results"])
+            self.assertEqual([], passport(database, "b", [reviewed_rule], "2026-10-03")["rules"])
+            self.assertTrue(passport(database, "b", [reviewed_rule], "2026-10-03")["city_boundary_needs_verification"])
+            self.assertEqual(0.0, passport(database, "b", [reviewed_rule], "2026-10-03")["jurisdiction"]["confidence"])
 
 
 if __name__ == "__main__":

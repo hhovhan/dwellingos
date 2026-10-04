@@ -25,7 +25,7 @@ machine-specific paths.
 - 500/500 properties processed
 - 57 evidence-linked rules
 - 5,419 deterministic address-rule evaluations
-- 46 automated tests, a separate 9-case extraction/11-case address holdout, and 20 source-anchored, non-attorney rule-decision cases
+- 47 automated tests, a separate 9-case extraction/11-case address holdout, and 20 source-anchored, non-attorney rule-decision cases
 - 100% citation and verbatim-evidence completeness among emitted rules
 - Zero unsupported extraction candidates
 - 20-million-row synthetic portfolio import and indexed rule assessment completed (see measured limits below)

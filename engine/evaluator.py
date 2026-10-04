@@ -14,7 +14,7 @@ def resolve_jurisdiction(row):
         "legal_city": legal_city,
         "city_jurisdiction": f"{legal_city}, {row['state']}",
         "method": evidence or ("audited_postal_alias" if postal != legal_city else "dataset_postal_city_assumed"),
-        "confidence": 0.0 if evidence == "legal_boundary_unverified" else 0.6 if evidence == "sample_postal_city_assumption_needs_boundary_check" or (not evidence and postal == legal_city) else 0.95,
+        "confidence": 0.0 if evidence in {"legal_boundary_unverified", "supplied_legal_city_unverified"} else 0.6 if evidence == "sample_postal_city_assumption_needs_boundary_check" or (not evidence and postal == legal_city) else 0.95,
     }
 
 
@@ -38,7 +38,9 @@ def temporal_result(rule, as_of):
 
 
 def evaluate(rule, row, as_of):
-    if rule["level"] == "city" and row.get("jurisdiction_evidence") == "legal_boundary_unverified":
+    if rule["level"] == "city" and row.get("jurisdiction_evidence") in {
+        "legal_boundary_unverified", "supplied_legal_city_unverified"
+    }:
         return None
     jurisdiction = resolve_jurisdiction(row)
     if not jurisdiction_matches(rule, jurisdiction):
