@@ -28,7 +28,7 @@ npm run build:static   # create the deployable dist/ snapshot
 npm start              # local product + operator workbench at http://127.0.0.1:4173
 ```
 
-The GitHub clone command works for reviewers **only after this repository is public**; until then, access requires the owner's authorization. The competition JSON files are in `output/rules.json`, `output/lookups.json`, and `output/changes.json`.
+The repository is public and can be cloned without authentication. The competition JSON files are in `output/rules.json`, `output/lookups.json`, and `output/changes.json`.
 
 | Stage | Implementation | Checkable artifact |
 | --- | --- | --- |

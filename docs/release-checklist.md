@@ -18,7 +18,7 @@
 - [x] Desktop browser verification with no console errors
 - [x] 390px mobile verification with no horizontal overflow
 - [x] Static-host deployment configuration
-- [ ] Public GitHub URL
+- [x] Public GitHub URL: https://github.com/hhovhan/dwellingos (public page returned HTTP 200 on 2026-10-04)
 - [x] Public deployment URL: https://dwelling.hovhannes.dev/
 - [ ] Recorded and uploaded videos
 - [ ] Team member accounts attached on Hack-Nation
